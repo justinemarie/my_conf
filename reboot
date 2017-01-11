@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo "The following users are still logged in:"
+who
+
+echo "The server is getting doomed!!!" | wall
+echo
+echo
+echo "Reboot in 10 seconds."
+echo "Are you sure you still want to reboot? (Ctrl+C to abort rebot!)"
+for i in $(seq 1 10)
+do 
+  sleep 1
+  echo $i
+done
+
+if [[ `sudo xl list` ]]
+then
+  vmslist=`sudo xl list | cut -d " " -f1 | grep -v Name | grep -v Domain-0`
+  echo $vmslist | while read vm; do echo "DESTROYING $vm"; sudo xl destroy $vm; done
+  echo "No active VMs left!" 
+  sudo xl list
+  sleep 5
+else 
+  echo "Xen inactive, shutting down no VMs."
+fi
+
+reboot2
