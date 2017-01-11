@@ -11,10 +11,11 @@ sudo apt-get install ruby subversion build-essential libpcap0.8-dev vim cmake pe
 
 sudo gem install trollop
 
-wget http://ovh.dl.sourceforge.net/sourceforge/ibmonitor/ibmonitor-1.4.tar.gz
+wget http://prdownloads.sourceforge.net/ibmonitor/ibmonitor-1.4.tar.gz
 tar -xf ibmonitor-1.4.tar.gz
 
 ## Set up my keys
+mkdir ~/.ssh
 cp id_rsa.pub ~/.ssh/authorized_keys
 
 ## Bashrc, vimrc, bash profile
