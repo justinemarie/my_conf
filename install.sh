@@ -27,4 +27,4 @@ cp bash_profile ~/.bash_profile
 git config --global user.name "Justine Sherry"
 git config --global user.email sherry@nefeli.io
 git config --global core.editor vim
-
+git config --global push.default simple 
