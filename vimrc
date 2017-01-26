@@ -17,3 +17,5 @@ set softtabstop=2
 set foldmethod=syntax
 
 match ErrorMsg '\s\+$'
+
+au BufNewFile,BufRead *.bess set filetype=python
